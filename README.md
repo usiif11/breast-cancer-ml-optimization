@@ -1,128 +1,124 @@
-# -Breast-Cancer-Classification-using-Genetic-Algorithm-Random-Forest
-Breast Cancer Classification using Genetic Algorithm + Random Forest 
 
-📌 Overview 
+# Breast Cancer Classification & ML Optimization
 
-This project builds a Machine Learning pipeline for Breast Cancer classification (malignant vs benign) using: 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-2563EB?style=flat-square)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
+![Research](https://img.shields.io/badge/Project-Research-64748B?style=flat-square)
 
-Genetic Algorithm (GA) for feature selection  
+## Overview
 
-Random Forest Classifier for model training  
+A machine learning research project that combines Genetic Algorithms (GA) and Random Forest classification to investigate the impact of feature selection and hyperparameter optimization on breast cancer classification performance.
 
-Stratified K-Fold Cross Validation for reliable evaluation  
+The main objective is to improve classification accuracy while reducing the number of input features.
 
-Optimization objective: maximize the classification accuracy. 
+## Key Results
 
-The dataset used is the Breast Cancer Wisconsin Dataset provided by sklearn.datasets. 
+| Metric | Baseline | Optimized Model |
+|---|---:|---:|
+| Test Accuracy | 95.61% | 98.25% |
+| ROC-AUC | 0.9937 | 0.9937 |
+| Number of Features | 30 | 9 |
+| Feature Reduction | — | 70% |
 
- 
+The reported optimized model achieved:
 
-🧠 Project Pipeline 
+- 2.64 percentage points improvement in test accuracy.
+- 70% reduction in input features.
+- ROC-AUC of 0.9937.
 
-1️⃣ Load Dataset 
+These results are reported from the original experiment and have not been independently reproduced.
 
-569 samples  
+## Dataset
 
-30 numerical features  
+Breast Cancer Wisconsin (Diagnostic) Dataset, available through Scikit-learn.
 
-Target:  
+- Total samples: 569
+- Original numerical features: 30
+- Classification task: Benign vs. Malignant
+- Problem type: Binary classification
 
-0 → Benign  
+## Project Methodology
 
-1 → Malignant 
+1. Dataset loading and preparation.
+2. Genetic Algorithm-based feature selection.
+3. Random Forest classification.
+4. Hyperparameter optimization.
+5. Stratified 5-Fold Cross Validation.
+6. Performance evaluation and comparison.
 
-2️⃣ Genetic Algorithm Setup 
+## Genetic Algorithm Configuration
 
-Generations: 20  
+| Parameter | Value |
+|---|---:|
+| Population Size | 50 |
+| Generations | 20 |
+| Mutation Rate | 0.05 |
+| Independent Mutation Probability | 0.02 |
+| Cross-Validation Folds | 5 |
+| Fitness Metric | Mean Classification Accuracy |
 
-Population size: 50  
+Each feature selection chromosome represents a binary vector, where 1 indicates an included feature and 0 indicates an excluded feature.
 
-Mutation rate: 0.05  
+## Selected Features
 
-Feature probability (INDPB): 0.02  
+The optimization process selected 9 out of 30 original features:
 
-Fitness metric: Mean accuracy across Stratified K-Fold (CV=5) 
+- Mean Texture
+- Mean Concave Points
+- Mean Symmetry
+- Mean Fractal Dimension
+- Area Error
+- Worst Texture
+- Worst Area
+- Worst Smoothness
+- Worst Concavity
 
-3️⃣ Chromosome Structure 
+## Optimized Hyperparameters
 
-Binary vector of size = number of features  
+| Hyperparameter | Value |
+|---|---:|
+| n_estimators | 474 |
+| max_depth | 24 |
+| min_samples_split | 3 |
+| min_samples_leaf | 4 |
+| max_features | 0.155 |
 
-1 → Feature INCLUDED  
+## Technologies
 
-0 → Feature EXCLUDED 
+- Python
+- Scikit-learn
+- Random Forest
+- Genetic Algorithms
+- Jupyter Notebook
+- Feature Selection
+- Hyperparameter Optimization
+- Stratified Cross Validation
 
-4️⃣ Fitness Function 
+## Repository Contents
 
-For each chromosome: 
+- Jupyter Notebook: Original implementation and experiments.
+- PDF Report: Supporting project documentation.
+- README.md: Project overview and reported results.
 
-Select the included features  
+## Future Improvements
 
-Train a RandomForestClassifier  
+- Reproduce the experiments in a clean environment.
+- Verify feature selection and hyperparameter tuning against data leakage.
+- Compare performance across additional classifiers.
+- Evaluate precision, recall, F1-score, and confusion matrices.
+- Investigate model interpretability using SHAP.
+- Evaluate generalization on independent datasets.
 
-Evaluate using Stratified K-Fold  
+## Disclaimer
 
-Return mean accuracy as the fitness score 
+This project was developed for educational and research purposes. It is not a clinically validated diagnostic system and should not be used for medical decision-making.
 
- 
+## Author
 
-🚀 Optimization Goal 
+**Yousef Hossam**
 
-The Genetic Algorithm searches for: 
+AI Engineer | Machine Learning | Data Analysis
 
-Best subset of features  
-
-Best Random Forest hyperparameters  
-
-Best classification accuracy 
-
- 
-
-📊 Results (from your notebook) 
-
-Selected features count: 9  
-
-Selected feature names:  
-
-mean texture  
-
-mean concave points  
-
-mean symmetry  
-
-mean fractal dimension  
-
-area error  
-
-worst texture  
-
-worst area  
-
-worst smoothness  
-
-worst concavity 
-
-Best Hyperparameters Found: 
-
-n_estimators: 474 
-
-max_depth: 24 
-
-min_samples_split: 3 
-
-min_samples_leaf: 4 
-
-max_features: 0.155 
-
-Final test AUC: 0.9937 
-
-Accuracy: 0.9825  
-
-All-features 
-
- test AUC: 0.9937 
-
-Accuracy: 0.9561 
-
- 
-
- 
+[GitHub](https://github.com/usiif11) | [LinkedIn](https://www.linkedin.com/in/yousef-hossam-63b167358)
