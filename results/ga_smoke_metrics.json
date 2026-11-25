@@ -1,0 +1,96 @@
+{
+  "mode": "fresh_search",
+  "seed": 42,
+  "train_samples": 455,
+  "test_samples": 114,
+  "label_order": [
+    "malignant",
+    "benign"
+  ],
+  "positive_class": "malignant",
+  "baseline": {
+    "features": 30,
+    "accuracy": 0.956140350877193,
+    "roc_auc": 0.9937169312169312,
+    "precision_malignant": 0.9512195121951219,
+    "recall_malignant": 0.9285714285714286,
+    "f1_malignant": 0.9397590361445783,
+    "confusion_matrix": [
+      [
+        39,
+        3
+      ],
+      [
+        2,
+        70
+      ]
+    ]
+  },
+  "optimized": {
+    "features": 15,
+    "accuracy": 0.9298245614035088,
+    "roc_auc": 0.9897486772486772,
+    "precision_malignant": 0.8863636363636364,
+    "recall_malignant": 0.9285714285714286,
+    "f1_malignant": 0.9069767441860465,
+    "confusion_matrix": [
+      [
+        39,
+        3
+      ],
+      [
+        5,
+        67
+      ]
+    ]
+  },
+  "selected_features": [
+    "mean perimeter",
+    "mean area",
+    "mean smoothness",
+    "mean concavity",
+    "perimeter error",
+    "area error",
+    "smoothness error",
+    "compactness error",
+    "concavity error",
+    "symmetry error",
+    "fractal dimension error",
+    "worst texture",
+    "worst area",
+    "worst compactness",
+    "worst concavity"
+  ],
+  "hyperparameters": {
+    "n_estimators": 121,
+    "max_depth": 24,
+    "min_samples_split": 5,
+    "min_samples_leaf": 18,
+    "max_features": 0.178
+  },
+  "search_config": {
+    "population": 4,
+    "generations": 2
+  },
+  "cache": {
+    "cache_hits": 8,
+    "unique_evaluations": 4
+  },
+  "history": [
+    {
+      "generation": 1,
+      "best_fitness": 0.9633307250025515,
+      "mean_fitness": 0.962906627428299,
+      "features": 15
+    },
+    {
+      "generation": 2,
+      "best_fitness": 0.9633307250025515,
+      "mean_fitness": 0.9633307250025515,
+      "features": 15
+    }
+  ],
+  "python": "3.13.5",
+  "scikit_learn": "1.8.0",
+  "elapsed_seconds": 5.668
+}

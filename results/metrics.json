@@ -1,0 +1,71 @@
+{
+  "mode": "saved_configuration_replay",
+  "seed": 42,
+  "train_samples": 455,
+  "test_samples": 114,
+  "label_order": [
+    "malignant",
+    "benign"
+  ],
+  "positive_class": "malignant",
+  "baseline": {
+    "features": 30,
+    "accuracy": 0.956140350877193,
+    "roc_auc": 0.9937169312169312,
+    "precision_malignant": 0.9512195121951219,
+    "recall_malignant": 0.9285714285714286,
+    "f1_malignant": 0.9397590361445783,
+    "confusion_matrix": [
+      [
+        39,
+        3
+      ],
+      [
+        2,
+        70
+      ]
+    ]
+  },
+  "optimized": {
+    "features": 9,
+    "accuracy": 0.9824561403508771,
+    "roc_auc": 0.9937169312169312,
+    "precision_malignant": 1.0,
+    "recall_malignant": 0.9523809523809523,
+    "f1_malignant": 0.975609756097561,
+    "confusion_matrix": [
+      [
+        40,
+        2
+      ],
+      [
+        0,
+        72
+      ]
+    ]
+  },
+  "selected_features": [
+    "mean texture",
+    "mean concave points",
+    "mean symmetry",
+    "mean fractal dimension",
+    "area error",
+    "worst texture",
+    "worst area",
+    "worst smoothness",
+    "worst concavity"
+  ],
+  "hyperparameters": {
+    "n_estimators": 474,
+    "max_depth": 24,
+    "min_samples_split": 3,
+    "min_samples_leaf": 4,
+    "max_features": 0.155
+  },
+  "search_config": null,
+  "cache": null,
+  "history": [],
+  "python": "3.13.5",
+  "scikit_learn": "1.8.0",
+  "elapsed_seconds": 0.599
+}
